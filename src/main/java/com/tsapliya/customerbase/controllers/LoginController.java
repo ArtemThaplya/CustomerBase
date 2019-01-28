@@ -23,7 +23,7 @@ public class LoginController {
         if (isAdmin) {
             return "menu.html";
         } else {
-            return "error.jsp";
+            return "error.html";
         }
     }
 }

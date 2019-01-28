@@ -42,10 +42,10 @@ public class CustomerController {
 
     /* It provides list of employees in model object */
     @RequestMapping("/viewCustomer")
-    public RedirectView viewemp(Model m) {
+    public String viewemp(Model m) {
         List<Customer> list = dao.getEmployees();
         m.addAttribute("list", list);
-        return new RedirectView("viewCustomer");
+        return "redirect:/viewCustomer";
     }
 
     /* It displays object data into form for the given id.
@@ -54,7 +54,7 @@ public class CustomerController {
     public String edit(@PathVariable int id, Model m) {
         Customer customer = dao.getEmpById(id);
         m.addAttribute("command", customer);
-        return "customerEditForm";
+        return "redirect:/customerEditForm";
     }
 
     /* It updates model object. */
